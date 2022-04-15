@@ -9,7 +9,7 @@ fi
 docker run --rm -it \
 	-v $(pwd):/opt \
 	-w /opt laravelsail/php81-composer:latest \
-	/bin/bash -c "composer self-update && composer diagnose && composer install && cp .env.example .env && ./artisan sail:install"
+	/bin/bash -c "composer self-update && composer diagnose && composer install && cp .env.example .env && php artisan sail:install --with=mysql"
 
 CYAN='\033[0;36m'
 LIGHT_CYAN='\033[1;36m'
