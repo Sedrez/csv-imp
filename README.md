@@ -29,6 +29,16 @@ $ cd cvs-imp
 ```
 $ ./csv-imp.sh
 ```
+
+###Para WSL (Linux no Windows)
+```
+$ cd ..
+$ php ./artisan sail:install --with=mysql
+$ cd cvs-imp
+$ php ./artisan sail:install --with=mysql
+```
+Parece loucura essa parte do WSL, se alguém conhecer o motivo, mande um oi. Tenho print pra provar.
+
 ### Subindo os Serviços
 
 - Execute a aplicação
