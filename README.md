@@ -30,7 +30,7 @@ $ cd cvs-imp
 $ ./csv-imp.sh
 ```
 
-#### Para WSL (Linux no Windows)
+#### Para WSL
 ```
 $ cd ..
 $ php ./artisan sail:install --with=mysql
