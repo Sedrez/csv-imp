@@ -2,33 +2,33 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\User;
 use Tests\TestCase;
 
 class CsvImportTest extends TestCase
 {
     /**
-     * A basic feature test example.
+     * A basic import test.
      *
      * @return void
      */
     public function testImport()
     {
-        $data = [
-            'id' => "1001"
-            'first_name' => "New Product",
-            'description' => "This is a product",
-            'units' => 20,
-            'price' => 10,
-            'image' => "https://images.pexels.com/photos/1000084/pexels-photo-1000084.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        $data[0] = [
+            "id" => '1001',
+            "first_name" => 'TestFirstName',
+            "last_name" => 'LastNameTest',
+            "email" => "email@test",
+            "gender" => "undefined",
+            "ip_address" => "192.168.1.1",
+            "company" => "Shell",
+            "city" => "Rainville",
+            "title"=> 'Software Engineer' ,
+            "website" => "https://github.com/Sedrez/csv-imp"
+            
         ];
-        //$user = factory(\App\User::class)->create();
-       // $response = $this->actingAs($user, 'api')->json('POST', '/api/products',$data);
-        $response = $this->json('POST', '/customer',$data);
+        $response = $this->json('POST', route('customers.store') , $data);
         $response->assertStatus(200);
-        $response->assertJson(['status' => true]);
         $response->assertJson(['success' => '<strong>Sucesso!</strong></br>Os clientes foram importados.']);
-        $response->assertJson(['data' => $data]);
     }
 }

@@ -25,8 +25,8 @@ class CustomerController extends Controller
      */
     public function data_chart()
     {
-        //Suporte ao REGEX no MYSQL parece não ser suficiente para validar todos os emails
-        //$customers = Customer::get(['last_name', 'gender']);
+        //Suporte ao REGEX no MYSQL parece não ser suficiente para validar todos os emails 
+        //Então passei a buscar sem filtro e fazer as validações em Java Script
         $customers = DB::table('customers')
             ->select('last_name', 'gender', 'email')
             ->get();
@@ -63,8 +63,9 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $request = json_decode($request->getContent(), true);        
+        $request = json_decode($request->getContent(), true);    
         try {
+            //Preferi usar Bulk Insert por questões de performance 
             DB::table('customers')->upsert($request, ['id']);
         } catch (\Illuminate\Database\QueryException $e) {
             report($e);
