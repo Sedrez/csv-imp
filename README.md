@@ -1,6 +1,6 @@
 # Importação de Clientes | csv-imp
 
-Este é um aplicativo demonstrativo que importa arquivos com registros de clientes em formato CSV para uma base de dados em MySQL e apresenta ao usuário, uma listagem de todos os clientes já importados junto com um breve gráfico relacionado à qualidade das informações registradas.
+Este é um aplicativo demonstrativo que importa arquivos com registros de clientes em formato CSV para uma base de dados em MySQL e apresenta ao usuário, uma listagem de todos os clientes já importados junto com um breve gráfico relacionado a qualidade das informações registradas.
 
 Para fins de performance, as inserções são feitas com bulk insert e carregados de forma assíncrona via JQuery.
 
@@ -51,7 +51,7 @@ Parece loucura essa parte do WSL, se alguém conhecer o motivo, mande um oi. Ten
 $ docker exec -it csv-imp_laravel.test_1 bash php artisan migrate
 ```
 
-- Acesse no nacegador
+- Acesse no navegador
 ```
 localhost/customers
 ```
