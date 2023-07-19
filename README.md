@@ -29,14 +29,14 @@ $ ./csv-imp.sh
 
 ### Subindo os Containers
 
-- Execute o seguinte comando de dentro da pasta raiz do projeto
+Execute o seguinte comando de dentro da pasta raiz do projeto
 ```
 $ ./vendor/bin/sail up
 ```
 
 #### Criação da Base de dados e tabelas
 
-- Com o usuário e senha configurados no .env, crie a base de dados dentro do container do Mysql
+Com o usuário e senha configurados no .env, crie a base de dados dentro do container do Mysql
 ```
 $ docker exec -it csv-imp-mysql-1 bash
 ```
@@ -45,7 +45,7 @@ $ mysql -u sail -p -h localhost -e "CREATE DATABASE csv_imp;"
 ```
 
 
-- Execute o Migrate para criação das tabelas de dentro do container da aplicação
+Execute o Migrate para criação das tabelas de dentro do container da aplicação
 ```
 $ docker exec -it csv-imp-laravel.test-1 bash
 ```
@@ -54,7 +54,7 @@ $ php artisan migrate
 ```
 
 #### Acesso a aplicação
-- Em qualquer navegador atualizado, acesse
+Em qualquer navegador atualizado, acesse
 ```
 localhost/customers
 ```
