@@ -29,7 +29,7 @@ Após clonar a aplicação, você precisa instalar as dependências, rodando o s
 ./csv-imp.sh
 ```
 
-### Subindo os Containers
+#### Subindo os Containers
 
 Execute o seguinte comando de dentro da pasta raiz do projeto
 ```
@@ -55,7 +55,7 @@ docker exec -it csv-imp-laravel.test-1 bash
 php artisan migrate
 ```
 
-#### Acesso a aplicação
+### Acesso a aplicação
 Em qualquer navegador atualizado, acesse
 ```
 localhost/customers
