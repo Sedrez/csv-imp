@@ -19,7 +19,9 @@ O que você precisa para instalar?
 ### Instalação
 Clone o repositório git em sua máquina local
 
-```git clone https://github.com/Sedrez/csv-imp.git```
+```
+git clone https://github.com/Sedrez/csv-imp.git
+```
 
 Após clonar a aplicação, você precisa instalar as dependências, rodando o seguinte script na pasta raiz do projeto.
 
