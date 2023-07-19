@@ -60,4 +60,5 @@ Em qualquer navegador atualizado, acesse
 ```
 localhost/customers
 ```
+Importe arquivos no mesmo padrão do cutomers.csv, encontrado na raiz do projeto
 
