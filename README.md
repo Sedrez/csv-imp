@@ -21,38 +21,41 @@ Clone o repositório git em sua máquina local
 
 ```$ git clone https://github.com/Sedrez/csv-imp.git```
 
-Após clonar a aplicação, você precisa instalar as dependências.
+Após clonar a aplicação, você precisa instalar as dependências, rodando o seguinte script na pasta raiz do projeto.
 
-```
-$ cd cvs-imp
-```
 ```
 $ ./csv-imp.sh
 ```
 
-#### Para WSL
-```
-$ cd ..
-$ php ./artisan sail:install --with=mysql
-$ cd cvs-imp
-$ php ./artisan sail:install --with=mysql
-```
-Parece loucura essa parte do WSL, se alguém conhecer o motivo, mande um oi. Tenho print pra provar.
+### Subindo os Containers
 
-### Subindo os Serviços
-
-- Execute a aplicação
+- Execute o seguinte comando de dentro da pasta raiz do projeto
 ```
-./vendor/bin/sail up
+$ ./vendor/bin/sail up
 ```
 
-- Execute o Migrate para criação da base de dados
+#### Criação da Base de dados e tabelas
+
+- Com o usuário e senha configurados no .env, crie a base de dados dentro do container do Mysql
 ```
-$ docker exec -it csv-imp_laravel.test_1 bash php artisan migrate
+$ docker exec -it csv-imp-mysql-1 bash
+```
+```
+$ mysql -u sail -p -h localhost -e "CREATE DATABASE csv_imp;"
 ```
 
-- Acesse no navegador
+
+- Execute o Migrate para criação das tabelas de dentro do container da aplicação
+```
+$ docker exec -it csv-imp-laravel.test-1 bash
+```
+```
+$ php artisan migrate
+```
+
+#### Acesso a aplicação
+- Em qualquer navegador atualizado, acesse
 ```
 localhost/customers
 ```
-  
+
