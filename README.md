@@ -19,38 +19,38 @@ O que você precisa para instalar?
 ### Instalação
 Clone o repositório git em sua máquina local
 
-```$ git clone https://github.com/Sedrez/csv-imp.git```
+```git clone https://github.com/Sedrez/csv-imp.git```
 
 Após clonar a aplicação, você precisa instalar as dependências, rodando o seguinte script na pasta raiz do projeto.
 
 ```
-$ ./csv-imp.sh
+./csv-imp.sh
 ```
 
 ### Subindo os Containers
 
 Execute o seguinte comando de dentro da pasta raiz do projeto
 ```
-$ ./vendor/bin/sail up
+./vendor/bin/sail up
 ```
 
 #### Criação da Base de dados e tabelas
 
 Com o usuário e senha configurados no .env, crie a base de dados dentro do container do Mysql
 ```
-$ docker exec -it csv-imp-mysql-1 bash
+docker exec -it csv-imp-mysql-1 bash
 ```
 ```
-$ mysql -u sail -p -h localhost -e "CREATE DATABASE csv_imp;"
+mysql -u sail -p -h localhost -e "CREATE DATABASE csv_imp;"
 ```
 
 
 Execute o Migrate para criação das tabelas de dentro do container da aplicação
 ```
-$ docker exec -it csv-imp-laravel.test-1 bash
+docker exec -it csv-imp-laravel.test-1 bash
 ```
 ```
-$ php artisan migrate
+php artisan migrate
 ```
 
 #### Acesso a aplicação
